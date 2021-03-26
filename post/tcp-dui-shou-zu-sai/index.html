@@ -1,10 +1,10 @@
-<html lang="zh">
+<html>
 <head>
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>关于 - dic</title>
+<title>TCP队首阻塞 | dic</title>
 
 <link rel="shortcut icon" href="https://blog.dicjun.cn/favicon.ico?v=1616752853463">
 
@@ -25,7 +25,7 @@
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
@@ -86,18 +86,48 @@
 </nav>
 
     <div class="post-container">
-        <div class="post-detail">
+        <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
-                <div class="post-content">
+                <h2 class="post-title">
+                    TCP队首阻塞
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-03-26 ·
+                    </time>
                     
+                </div>
+                <div class="post-content">
+                    <p>#####http/1<br>
+1 无状态(非管道化) 串行请求, 前面的阻塞了, 后面的也阻塞<br>
+2 长链接(管道化) 并行请求, 但是返回还是按顺序的, 前面的阻塞了, 后面的也阻塞</p>
+<p>#####http/2<br>
+链接复用<br>
+但是tcp安全策略 如果前面有数据包失败, 必须等待重发, 影响后面的数据包<br>
+通常http/2只用一个tcp通道</p>
+<p>####解决办法 多tcp通道并发<br>
+1 浏览器自身控制<br>
+2 用多个子域名(也会实用多个tcp通道)<br>
+3 http/2</p>
+
                 </div>
             </article>
         </div>
-        <br>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.dicjun.cn/post/go-hu-chi-suo/" class="post-title gt-a-link">
+                    Go互斥锁
+                </a>
+            </div>
         
 
         
 
+        
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first"></div>

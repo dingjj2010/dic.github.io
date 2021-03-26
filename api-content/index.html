@@ -1,1 +1,1 @@
-{"posts":[{"title":"Go互斥锁","content":"1 2 3 ","link":"https://blog.dicjun.cn/post/go-hu-chi-suo/"}]}
+{"posts":[{"title":"TCP队首阻塞","content":"#####http/1 1 无状态(非管道化) 串行请求, 前面的阻塞了, 后面的也阻塞 2 长链接(管道化) 并行请求, 但是返回还是按顺序的, 前面的阻塞了, 后面的也阻塞 #####http/2 链接复用 但是tcp安全策略 如果前面有数据包失败, 必须等待重发, 影响后面的数据包 通常http/2只用一个tcp通道 ####解决办法 多tcp通道并发 1 浏览器自身控制 2 用多个子域名(也会实用多个tcp通道) 3 http/2 ","link":"https://blog.dicjun.cn/post/tcp-dui-shou-zu-sai/"},{"title":"Go互斥锁","content":"1 2 3 ","link":"https://blog.dicjun.cn/post/go-hu-chi-suo/"}]}
