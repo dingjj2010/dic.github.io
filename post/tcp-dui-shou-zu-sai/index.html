@@ -6,7 +6,7 @@
 
 <title>TCP队首阻塞 | dic</title>
 
-<link rel="shortcut icon" href="https://blog.dicjun.cn/favicon.ico?v=1616752853463">
+<link rel="shortcut icon" href="https://blog.dicjun.cn/favicon.ico?v=1616752942829">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.dicjun.cn/styles/main.css">
@@ -77,7 +77,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1616752853463" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1616752942829" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -98,15 +98,15 @@
                     
                 </div>
                 <div class="post-content">
-                    <p>#####http/1<br>
-1 无状态(非管道化) 串行请求, 前面的阻塞了, 后面的也阻塞<br>
+                    <h5 id="http1">http/1</h5>
+<p>1 无状态(非管道化) 串行请求, 前面的阻塞了, 后面的也阻塞<br>
 2 长链接(管道化) 并行请求, 但是返回还是按顺序的, 前面的阻塞了, 后面的也阻塞</p>
-<p>#####http/2<br>
-链接复用<br>
+<h5 id="http2">http/2</h5>
+<p>链接复用<br>
 但是tcp安全策略 如果前面有数据包失败, 必须等待重发, 影响后面的数据包<br>
 通常http/2只用一个tcp通道</p>
-<p>####解决办法 多tcp通道并发<br>
-1 浏览器自身控制<br>
+<h4 id="解决办法-多tcp通道并发">解决办法 多tcp通道并发</h4>
+<p>1 浏览器自身控制<br>
 2 用多个子域名(也会实用多个tcp通道)<br>
 3 http/2</p>
 
